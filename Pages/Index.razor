@@ -1,0 +1,39 @@
+﻿@page "/"
+
+<h1><b>Calculadora</b></h1>
+
+<p>En este apartado podras ingresar dos numero sy poder visualizar la suma, resta y multiplicacion de dichos numeros</p>
+
+<label>Primer Numero: </label>
+<br />
+<input type="number" @bind="PrimerNumero"/>
+<br />
+<label>Segundo Numero:</label>
+<br />
+<input type="number" @bind="SegundoNumero"/>
+<br />
+<br />
+
+<p>La suma es:           @Suma</p>
+<p>La resta es:          @Resta</p>
+<p>La multiplicacion es: @Multiplicacion</p>
+
+<br />
+
+<button class="btn btn-primary" @onclick="Calcular">Calcular</button>
+
+
+@code{
+    public int PrimerNumero { get; set; }
+    public int SegundoNumero { get; set; }
+    public int Suma { get; set; }
+    public int Resta { get; set; }
+    public int Multiplicacion { get; set; }
+
+    private void Calcular()
+    {
+        Suma = PrimerNumero + SegundoNumero;
+        Resta = PrimerNumero - SegundoNumero;
+        Multiplicacion = PrimerNumero * SegundoNumero;
+    }
+}
